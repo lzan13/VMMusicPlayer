@@ -3,7 +3,7 @@
   <header class="mm-header">
     <h1 class="header">
       <a href="https://github.com/maomao1996/Vue-mmPlayer" target="_blank">
-        mmPlayer 在线音乐播放器
+        虚拟音乐播放器VMPlayer
       </a>
       <img
         v-if="visitorBadge"
@@ -77,12 +77,12 @@ import { VISITOR_BADGE_ID } from '@/config'
 export default {
   name: 'MmHeader',
   components: {
-    MmDialog
+    MmDialog,
   },
   data() {
     return {
       user: {}, // 用户数据
-      uidValue: '' // 记录用户 UID
+      uidValue: '', // 记录用户 UID
     }
   },
   computed: {
@@ -92,7 +92,7 @@ export default {
       }
       return ''
     },
-    ...mapGetters(['uid'])
+    ...mapGetters(['uid']),
   },
   created() {
     this.uid && this._getUserPlaylist(this.uid)
@@ -149,8 +149,8 @@ export default {
         }, 200)
       })
     },
-    ...mapActions(['setUid'])
-  }
+    ...mapActions(['setUid']),
+  },
 }
 </script>
 
