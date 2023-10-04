@@ -29,7 +29,7 @@ export default {
     // 获取歌单详情
     getPlaylistDetail(this.$route.params.id)
       .then((playlist) => {
-        document.title = `${playlist.name} - mmPlayer在线音乐播放器`
+        document.title = `${playlist.name} - 虚拟音乐播放器`
         this.list = playlist.tracks
         this._hideLoad()
       })

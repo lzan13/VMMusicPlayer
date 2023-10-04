@@ -17,9 +17,9 @@
     <!--播放器-->
     <div class="music-bar" :class="{ disable: !musicReady || !currentMusic.id }">
       <div class="music-bar-btns">
-        <mm-icon class="pointer" type="prev" :size="36" title="上一曲 Ctrl + Left" @click="prev" />
+        <mm-icon class="pointer" type="previous" :size="36" title="上一曲 Ctrl+←" @click="prev" />
         <div class="control-play pointer" title="播放暂停 Ctrl + Space" @click="play">
-          <mm-icon :type="playing ? 'pause' : 'play'" :size="24" />
+          <mm-icon :type="playing ? 'pause' : 'play'" :size="48" />
         </div>
         <mm-icon class="pointer" type="next" :size="36" title="下一曲 Ctrl + Right" @click="next" />
       </div>
@@ -29,7 +29,7 @@
             {{ currentMusic.name }}
             <span>- {{ currentMusic.singer }}</span>
           </template>
-          <template v-else>欢迎使用mmPlayer在线音乐播放器</template>
+          <template v-else>欢迎使用虚拟音乐播放器</template>
         </div>
         <div v-if="currentMusic.id" class="music-bar-time">
           {{ currentTime | format }}/{{ currentMusic.duration % 3600 | format }}
@@ -328,7 +328,7 @@ export default {
     getModeIconType() {
       return {
         [PLAY_MODE.LIST_LOOP]: 'loop',
-        [PLAY_MODE.ORDER]: 'sequence',
+        [PLAY_MODE.ORDER]: 'loop',
         [PLAY_MODE.RANDOM]: 'random',
         [PLAY_MODE.LOOP]: 'loop-one',
       }[this.mode]

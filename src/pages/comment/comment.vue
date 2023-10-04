@@ -14,7 +14,7 @@
         <div class="comment-item-opt">
           <span class="comment-opt-date">{{ item.time | format }}</span>
           <span class="comment-opt-liked">
-            <mm-icon type="good" />
+            <mm-icon type="thumb" />
             {{ item.likedCount }}
           </span>
         </div>
@@ -53,7 +53,7 @@
         <div class="comment-item-opt">
           <span class="comment-opt-date">{{ item.time | format }}</span>
           <span v-if="item.likedCount > 0" class="comment-opt-liked">
-            <mm-icon type="good" />
+            <mm-icon type="thumb" />
             {{ item.likedCount }}
           </span>
         </div>

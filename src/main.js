@@ -38,17 +38,15 @@ router.beforeEach((to, from, next) => {
   if (redirectList.includes(to.path)) {
     next()
   } else {
-    document.title =
-      (to.meta.title && `${to.meta.title} - mmPlayer在线音乐播放器`) || 'mmPlayer在线音乐播放器'
+    document.title = (to.meta.title && `${to.meta.title} - 虚拟音乐播放器`) || '虚拟音乐播放器'
     next()
   }
 })
 
 // 版权信息
-window.mmPlayer = window.mmplayer = `欢迎使用 mmPlayer!
+window.mmPlayer = window.mmplayer = `欢迎使用VMMusicPlayer!
 当前版本为：V${VERSION}
-作者：茂茂
-Github：https://github.com/maomao1996/Vue-mmPlayer
+Github：https://github.com/lzan13/vmmusicplayer
 歌曲来源于网易云音乐 (https://music.163.com)`
 // eslint-disable-next-line no-console
 console.info(`%c${window.mmplayer}`, `color:blue`)

@@ -33,7 +33,7 @@
             {{ item.duration % 3600 | format }}
             <mm-icon
               class="hover list-menu-icon-del"
-              type="delete-mini"
+              type="close"
               :size="40"
               @click.stop="deleteItem(index)"
             />
@@ -169,7 +169,7 @@ export default {
         playing,
         currentMusic: { id },
       } = this
-      return playing && id === itemId ? 'pause-mini' : 'play-mini'
+      return playing && id === itemId ? 'pause' : 'play'
     },
     // 删除事件
     deleteItem(index) {
